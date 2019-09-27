@@ -3,7 +3,6 @@ const {Schema, model} = require('mongoose');
 const DevSchema = new Schema({
     name:{
         type: String,
-        required: true,
     },
     user:{
         type: String,
@@ -17,16 +16,16 @@ const DevSchema = new Schema({
 
     likes: [{
         type: Schema.Types.ObjectId,
-        ref: 'Dev',
+        ref: 'Model_dev',
     }],
     
     dislikes: [{
         type: Schema.Types.ObjectId,
-        ref: 'Dev',
+        ref: 'Model_dev',
     }],
 
 },{
     timestamps: true,
-})
+});
 
-module.exports = model('Dev',DevSchema)
+module.exports = model('Model_dev',DevSchema)
